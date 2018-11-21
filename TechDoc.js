@@ -10,9 +10,9 @@ function printDetail() {
   elem.innerHTML = p1.name;
 }
 
-var p1 = new person(prompt("Please Enter Your Name: "), 46, "Blue");
+//var p1 = new person(prompt("Please Enter Your Name: "), 46, "Blue");
 
-printDetail();
+//printDetail();
 
 /*var t = setInterval(move, 10);
 // starting position

@@ -1,15 +1,11 @@
-#image{
+img{
+  height:200px;
   max-width: 100%;
   display: block;
-  height: auto;
   border-radius: 10px;
   border: 2px solid black;
   box-shadow:  0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-body{
-  background-image:url("cyrille.jpg");
-  background-size: cover;
+  margin-left: 40%;
 }
 
 #title{
@@ -19,23 +15,44 @@ body{
     color:white;
 }
 
-#tribute-info{
-    border:2px solid rgba(255,0,0,1);
-    margin:2.5%;
-    width:95%;
-    color:white;
-    box-shadow:  0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+#header{
 }
 
-#img-div{
-  border:2px solid rgba(255,0,0,1);
-  margin-left: 25%;
-  margin-bottom:2.5%;
-  margin-right:25%;
-  width:50%;
-  color:white;
+#codeblock{
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+  border-radius: 15px;
+  font-size: 100%;
+  font-style: italic;
+  margin-left:40%;
+  padding-left:15px;
+  padding-right:15px;
+  width:20%;
 }
 
-.football{
-  color:white;
+.container{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap:5px;
+  grid-template-areas:
+  "nav body";
+}
+
+.bodytext{
+  grid-area:body;
+}
+
+.navbar{
+  border-right:2px black solid;
+  grid-area:nav;
+  border-radius: 15px;
+  padding-right: 5px;
+  font-size: 110%;
+  text-align: right;
+}
+
+.subbullet{
+  font-size: 75%;
 }

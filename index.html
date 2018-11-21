@@ -10,8 +10,8 @@
   <script src="FCC_Test_Script.js"></script>
 
   <div id="fcc_test_suite_wrapper" style="position: relative !important; z-index: 99999 !important;"></div>
-
-  <main id="main-doc">
+<div class="container">
+  <main id="main-doc" class="bodytext">
       <section class="main-section" id="CSS_Grid_Introduction">
         <header><h2>CSS Grid Introduction</h2></header>
         <p>CSS Grid Layout introduces a two-dimensional grid system to CSS. Grids can be used to layout major page areas or small user interface elements. This article introduces the CSS Grid Layout and the new terminology that is part of the CSS Grid Layout Level 1 specification.</p><br />
@@ -35,6 +35,7 @@
 
             In this example, I have a containing div with a class of wrapper, inside are five child elements.
         </p>
+        <div id="codeblock">
           <code>&ltdiv class="wrapper"&gt<br />
             &ltdiv&gtOne&lt/div&gt<br />
             &ltdiv&gtTwo&lt/div&gt<br />
@@ -42,11 +43,13 @@
             &ltdiv&gtFour&lt/div&gt<br />
             &ltdiv&gtFive&lt/div&gt<br />
           &lt/div&gt</code>
+        </div>
           <p>I make the .wrapper a grid container.</p>
-
+      <div id="codeblock">
         <code>.wrapper {
           display: grid;
         }</code>
+      </div>
 
         <p>The above code would give a grid that is 1 column wide with 5 rows</p>
 
@@ -62,7 +65,7 @@
           <img src="1_Grid_Track.png">
         <p>I can add to our earlier example by adding the grid-template-columns property, then defining the size of the column tracks.</p>
 
-
+      <div id="codeblock">
         <code>&ltdiv class="wrapper"&gt<br />
           &ltdiv&gtOne&lt/div&gt<br />
           &ltdiv&gtTwo&lt/div&gt<br />
@@ -70,12 +73,14 @@
           &ltdiv&gtFour&lt/div&gt<br />
           &ltdiv&gtFive&lt/div&gt<br />
         &lt/div&gt</code>
+      </div>
 <br /><br />
+<div id="codeblock">
         <code>.wrapper {<br />
           display: grid;<br />
           grid-template-columns: 200px 200px 200px;<br />
         }</code>
-
+</div>
         <p>I have now created a grid with three 200-pixel-wide column tracks. The child items will be laid out on this grid one in each grid cell.</p>
 
         <p>Further details can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Grid_Tracks" target ="_blank">Mozilla Developer</a> page for te grid funcitonality</p>
@@ -88,13 +93,12 @@
 
         <p>Lines are numbered according to the writing mode of the document. In a left-to-right language, line 1 is on the left-hand side of the grid. In a right-to-left language, it is on the right-hand side of the grid. Lines can also be named, and we will look at how to do this in a later guide in this series.</p>
 
-        <p><h3>Positioning items against lines</h3>
-We will be exploring line based placement in full detail in a later article. The following example demonstrates doing this in a simple way. When placing an item, we target the line – rather than the track.
+        <p>We will be exploring line based placement in full detail in a later article. The following example demonstrates doing this in a simple way. When placing an item, we target the line – rather than the track.
 
 In the following example I am placing the first two items on our three column track grid, using the grid-column-start, grid-column-end, grid-row-start and grid-row-end properties. Working from left to right, the first item is placed against column line 1, and spans to column line 4, which in our case is the far-right line on the grid. It begins at row line 1 and ends at row line 3, therefore spanning two row tracks.
 
 The second item starts on grid column line 1, and spans one track. This is the default so I do not need to specify the end line. It also spans two row tracks from row line 3 to row line 5. The other items will place themselves into empty spaces on the grid.</p>
-
+<div id="codeblock">
 <code>&ltdiv class="wrapper"&gt<br />
   &ltdiv&gtOne&lt/div&gt<br />
   &ltdiv&gtTwo&lt/div&gt<br />
@@ -102,11 +106,15 @@ The second item starts on grid column line 1, and spans one track. This is the d
   &ltdiv&gtFour&lt/div&gt<br />
   &ltdiv&gtFive&lt/div&gt<br />
 &lt/div&gt</code>
-<br /><br /><code>.wrapper {<br />
+</div>
+<br /><br />
+<div id="codeblock">
+<code>.wrapper {<br />
   display: grid;<br />
   grid-template-columns: repeat(3, 1fr);<br />
   grid-auto-rows: 100px;<br />
-}<br />
+}
+<br />
 <br />
 .box1 {<br />
   grid-column-start: 1;<br />
@@ -120,12 +128,32 @@ The second item starts on grid column line 1, and spans one track. This is the d
   grid-row-start: 3;<br />
   grid-row-end: 5;<br />
 }</code>
+</div>
 
         <p>Further details can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Grid_Lines" target ="_blank">Mozilla Developer</a> page for the grid funcitonality</p>
       </section>
-      <section class="main-section" id="Section_6">
-        <header><h2>Section 6</h2></header>
+      <section class="main-section" id="Grid_Cells">
+        <header><h2>Grid Cells</h2></header>
+        <p>A grid cell is the smallest unit on a grid. Conceptually it is like a table cell. As we saw in our earlier examples, once a grid is defined as a parent the child items will lay themselves out in one cell each of the defined grid. In the below image, I have highlighted the first cell of the grid.</p>
+        <img src="1_Grid_cell.png" alt="A highlighted cell">
       </section>
   </main>
 
+  <nav id="navbar" class="navbar">
+    <header id="nav-header"><h1>CSS Grid Control</h1></header><br />
+    <hr width="50%" align="right">
+    <a href="#CSS_Grid_Introduction" class="nav-link">CSS Grid Introduction</a><br />
+    <hr width="50%" align="right">
+    <a href="#What_Is_A_Grid" class="nav-link">What Is A Grid</a><br />
+    <hr width="50%" align="right">
+    <a href="#The_Grid_Container" class="nav-link">The Grid Container</a><br />
+    <hr width="50%" align="right">
+    <a href="#Grid_Tracks" class="nav-link">Grid Tracks</a><br />
+    <hr width="50%" align="right">
+    <a href="#Grid_Lines" class="nav-link">Grid Lines</a><br />
+    <hr width="50%" align="right">
+    <a href="#Grid_Cells" class="nav-link">Grid Cells</a><br />
+    <hr width="50%" align="right">
+  </nav>
+</div>
 </body>
