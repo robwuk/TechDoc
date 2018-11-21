@@ -42,6 +42,7 @@ img{
 
 .bodytext{
   grid-area:body;
+  overflow-y: scroll;
 }
 
 .navbar{
