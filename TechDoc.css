@@ -35,6 +35,7 @@ img{
   padding-bottom: 5px;
   display: grid;
   grid-template-columns: auto auto;
+  grid-template-rows:90% 90%;
   grid-gap:5px;
   grid-template-areas:
   "nav body";
