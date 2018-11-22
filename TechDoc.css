@@ -1,17 +1,9 @@
 @media only screen and (max-width: 600px) {
-    .container {  
-      position:fixed;
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-rows:auto auto;
-      grid-gap:5px;
-      grid-template-areas: "nav " "body";
-      height: 100vh;
+    body{background-color:lightblue;
     }
 }
 
-@media only screen {
-    .container{
+.container{
       //padding-top: 5px;
       //padding-bottom: 5px;
       position:fixed;
@@ -21,7 +13,6 @@
       grid-gap:5px;
       grid-template-areas: "nav body";
       height: 100vh;
-    }
 }
 
 img{
