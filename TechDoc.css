@@ -1,9 +1,26 @@
 @media only screen and (max-width: 600px) {
-    .container {
+    .container {  
+      position:fixed;
+      display: grid;
       grid-template-columns: auto;
+      grid-template-rows:auto auto;
+      grid-gap:5px;
+      grid-template-areas: "nav " "body";
+      height: 100vh;
+    }
+}
+
+@media only screen {
+    .container{
+      //padding-top: 5px;
+      //padding-bottom: 5px;
+      position:fixed;
+      display: grid;
+      grid-template-columns: auto auto;
       //grid-template-rows:1fr;
       grid-gap:5px;
-      grid-template-areas: "nav body";;
+      grid-template-areas: "nav body";
+      height: 100vh;
     }
 }
 
@@ -40,17 +57,6 @@ img{
   width:40%;
 }
 
-.container{
-  //padding-top: 5px;
-  //padding-bottom: 5px;
-  position:fixed;
-  display: grid;
-  grid-template-columns: auto auto;
-  //grid-template-rows:1fr;
-  grid-gap:5px;
-  grid-template-areas: "nav body";
-  height: 100vh;
-}
 
 .bodytext{
   grid-area:body;
