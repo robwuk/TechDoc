@@ -31,23 +31,23 @@
       </section>
       <section class="main-section" id="The_Grid_Container">
         <header><h2>The Grid Container</h2></header>
-        <p>We create a grid container by declaring <code>display: grid</code> or <code>display: inline-grid</code> on an element. As soon as we do this all direct children of that element will become grid items.
+        <p>We create a grid container by declaring <code class="in-code">display: grid</code> or <code class="in-code">display: inline-grid</code> on an element. As soon as we do this all direct children of that element will become grid items.
 
             In this example, I have a containing div with a class of wrapper, inside are five child elements.
         </p>
         <div id="codeblock">
           <code>&ltdiv class="wrapper"&gt<br />
-            &ltdiv&gtOne&lt/div&gt<br />
-            &ltdiv&gtTwo&lt/div&gt<br />
-            &ltdiv&gtThree&lt/div&gt<br />
-            &ltdiv&gtFour&lt/div&gt<br />
-            &ltdiv&gtFive&lt/div&gt<br />
+            &emsp;&emsp;&emsp;&emsp;&ltdiv&gtOne&lt/div&gt<br />
+            &emsp;&emsp;&emsp;&emsp;&ltdiv&gtTwo&lt/div&gt<br />
+            &emsp;&emsp;&emsp;&emsp;&ltdiv&gtThree&lt/div&gt<br />
+            &emsp;&emsp;&emsp;&emsp;&ltdiv&gtFour&lt/div&gt<br />
+            &emsp;&emsp;&emsp;&emsp;&ltdiv&gtFive&lt/div&gt<br />
           &lt/div&gt</code>
         </div>
-          <p>I make the .wrapper a grid container.</p>
+          <p>and we make the <code class="in-code">.wrapper</code> a grid container.</p>
       <div id="codeblock">
-        <code>.wrapper {
-          display: grid;
+        <code>.wrapper {<br />
+            &emsp;&emsp;&emsp;&emsp;display: grid;<br />
         }</code>
       </div>
 
@@ -61,24 +61,24 @@
       </section>
       <section class="main-section" id="Grid_Tracks">
         <header><h2>Grid Tracks</h2></header>
-        <p>In order to develop our Grid container, we need to define rows and columns using the <code>grid-template-columns</code> and <code>grid-template-rows</code> properties. These define grid "tracks" - space between any two lines on the grid (cf railway tracks). In the below image you can see a track highlighted – this is the first row track in our grid.</p>
+        <p>In order to develop our Grid container, we need to define rows and columns using the <code class="in-code">grid-template-columns</code> and <code class="in-code">grid-template-rows</code> properties. These define grid "tracks" - space between any two lines on the grid (cf railway tracks). In the below image you can see a track highlighted – this is the first row track in our grid.</p>
           <img src="1_Grid_Track.png">
-        <p>We can add to our earlier example by adding the <code>grid-template-columns</code> property, then defining the size of the column tracks.</p>
+        <p>We can add to our earlier example by adding the <code class="in-code">grid-template-columns</code> property, then defining the size of the column tracks.</p>
 
       <div id="codeblock">
         <code>&ltdiv class="wrapper"&gt<br />
-          &ltdiv&gtOne&lt/div&gt<br />
-          &ltdiv&gtTwo&lt/div&gt<br />
-          &ltdiv&gtThree&lt/div&gt<br />
-          &ltdiv&gtFour&lt/div&gt<br />
-          &ltdiv&gtFive&lt/div&gt<br />
+          &emsp;&emsp;&emsp;&emsp;&ltdiv&gtOne&lt/div&gt<br />
+          &emsp;&emsp;&emsp;&emsp;&ltdiv&gtTwo&lt/div&gt<br />
+          &emsp;&emsp;&emsp;&emsp;&ltdiv&gtThree&lt/div&gt<br />
+          &emsp;&emsp;&emsp;&emsp;&ltdiv&gtFour&lt/div&gt<br />
+          &emsp;&emsp;&emsp;&emsp;&ltdiv&gtFive&lt/div&gt<br />
         &lt/div&gt</code>
       </div>
 <br /><br />
 <div id="codeblock">
         <code>.wrapper {<br />
-          display: grid;<br />
-          grid-template-columns: 200px 200px 200px;<br />
+          &emsp;&emsp;&emsp;&emsp;display: grid;<br />
+          &emsp;&emsp;&emsp;&emsp;grid-template-columns: 200px 200px 200px;<br />
         }</code>
 </div>
         <p>This will createe a grid with three 200-pixel-wide column tracks. The child items will be laid out on this grid one in each grid cell.</p>
@@ -93,38 +93,38 @@
 
         <p>NOTE: Lines are numbered according to the writing mode of the document (in a left-to-right language, line 1 is on the left-hand side of the grid. In a right-to-left language, it is on the right-hand side of the grid). You can also name lines but this is not covered in this documentation.</p>
 
-<p>In the following example the first two items are placed on our three column grid, using the </code>grid-column-start</code>, <code>grid-column-end</code>, <code>grid-row-start</code> and <code>grid-row-end</code> properties. Working from left to right, the first item is placed against column line 1, and spans to column line 4, which in our case is the far-right line on the grid. It begins at row line 1 and ends at row line 3, therefore spanning two row tracks.
+<p>In the following example the first two items are placed on our three column grid, using the <code class="in-code">grid-column-start</code>, <code class="in-code">grid-column-end</code>, <code class="in-code">grid-row-start</code> and <code class="in-code">grid-row-end</code> properties. Working from left to right, the first item is placed against column line 1, and spans to column line 4, which in our case is the far-right line on the grid. It begins at row line 1 and ends at row line 3, therefore spanning two row tracks.
 
 The second item starts on grid column line 1, and spans one track. This is the default so I do not need to specify the end line. It also spans two row tracks from row line 3 to row line 5. The other items will place themselves into empty spaces on the grid.</p>
 <div id="codeblock">
 <code>&ltdiv class="wrapper"&gt<br />
-  &ltdiv&gtOne&lt/div&gt<br />
-  &ltdiv&gtTwo&lt/div&gt<br />
-  &ltdiv&gtThree&lt/div&gt<br />
-  &ltdiv&gtFour&lt/div&gt<br />
-  &ltdiv&gtFive&lt/div&gt<br />
+  &emsp;&emsp;&emsp;&emsp;&ltdiv&gtOne&lt/div&gt<br />
+  &emsp;&emsp;&emsp;&emsp;&ltdiv&gtTwo&lt/div&gt<br />
+  &emsp;&emsp;&emsp;&emsp;&ltdiv&gtThree&lt/div&gt<br />
+  &emsp;&emsp;&emsp;&emsp;&ltdiv&gtFour&lt/div&gt<br />
+  &emsp;&emsp;&emsp;&emsp;&ltdiv&gtFive&lt/div&gt<br />
 &lt/div&gt</code>
 </div>
 <br /><br />
 <div id="codeblock">
 <code>.wrapper {<br />
-  display: grid;<br />
-  grid-template-columns: repeat(3, 1fr);<br />
-  grid-auto-rows: 100px;<br />
+  &emsp;&emsp;&emsp;&emsp;display: grid;<br />
+  &emsp;&emsp;&emsp;&emsp;grid-template-columns: repeat(3, 1fr);<br />
+  &emsp;&emsp;&emsp;&emsp;grid-auto-rows: 100px;<br />
 }
 <br />
 <br />
 .box1 {<br />
-  grid-column-start: 1;<br />
-  grid-column-end: 4;<br />
-  grid-row-start: 1;<br />
-  grid-row-end: 3;<br />
+  &emsp;&emsp;&emsp;&emsp;grid-column-start: 1;<br />
+  &emsp;&emsp;&emsp;&emsp;grid-column-end: 4;<br />
+  &emsp;&emsp;&emsp;&emsp;grid-row-start: 1;<br />
+  &emsp;&emsp;&emsp;&emsp;grid-row-end: 3;<br />
 }<br />
 <br />
 .box2 {<br />
-  grid-column-start: 1;<br />
-  grid-row-start: 3;<br />
-  grid-row-end: 5;<br />
+  &emsp;&emsp;&emsp;&emsp;grid-column-start: 1;<br />
+  &emsp;&emsp;&emsp;&emsp;grid-row-start: 3;<br />
+  &emsp;&emsp;&emsp;&emsp;grid-row-end: 5;<br />
 }</code>
 </div>
 
