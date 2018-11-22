@@ -14,24 +14,24 @@
   <main id="main-doc" class="bodytext">
       <section class="main-section" id="CSS_Grid_Introduction">
         <header><h2>CSS Grid Introduction</h2></header>
-        <p>CSS Grid Layout introduces a two-dimensional grid system to CSS. Grids can be used to layout major page areas or small user interface elements. This article introduces the CSS Grid Layout and the new terminology that is part of the CSS Grid Layout Level 1 specification.</p><br />
-        <p>This text is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank"> Mozilla Developer Network</a> and all coyright is on there.</p>
+        <p>The CSS Grid Layout introduces a 2D grid system to CSS which can be used to layout whole pages areas as well as small user interface elements. This technical document introduces some basic Grid controls as well as some new terminology that is part of the CSS Grid Layout specification.</p><br />
+        <p>For a more detailed explaination please visit <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank"> Mozilla Developer Network</a> which gave the inspiration for this page.</p>
       </section>
       <section class="main-section" id="What_Is_A_Grid">
         <header><h2>What Is A Grid</h2></header>
-        <p>A grid is an intersecting set of horizontal and vertical lines – one set defining columns and the other rows. Elements can be placed onto the grid, respecting these column and row lines. CSS grid layout has the following features:</p>
+        <p>Similarly to a spreadsheet, a grid is an intersecting set of horizontal and vertical lines – one set defining columns and the other rows. Elements can be placed onto the grid in relation to these column and row lines. The following features are available in the CSS Grid Layout component:</p>
           <ul>
-            <li>Fixed and flexible track sizes</li> <p class="subbullet">You can create a grid with fixed track sizes – using pixels for example. This sets the grid to the specified pixel which fits to the layout you desire. You can also create a grid using flexible sizes with percentages or with the new fr unit designed for this purpose.</p>
-            <li>Item placement</li><p class="subbullet">You can place items into a precise location on the grid using line numbers, names or by targeting an area of the grid. Grid also contains an algorithm to control the placement of items not given an explicit position on the grid.</p>
-            <li>Creation of additional tracks to hold content</li><p class="subbullet">You can define an explicit grid with grid layout but the specification also deals with the content added outside of a declared grid, which adds additional rows and columns when needed. Features such as adding “as many columns that will fit into a container” are included.</p>
-            <li>Alignment control</li><p class="subbullet">Grid contains alignment features so that we can control how the items align once placed into a grid area, and how the entire grid is aligned.</p>
+            <li>Fixed and flexible cell sizes</li> <p class="subbullet">You can create a grid with fixed column/row sizes – using pixels for example - setting the grid to the specified size. It is also possible to create a grid using flexible sizes (use % or the new "fr" unit designed for this purpose).</p>
+            <li>Item placement</li><p class="subbullet">Items can be placed into precise locations on the grid using line numbers, names or by targeting an area of the grid. The Grid system can also use an algorithm to control the placement of items not given an explicit position on the grid.</p>
+            <li>Creation of additional row/columns to hold content</li><p class="subbullet">As mentioned above, you can define an explicit grid with grid layout however, the specification also deals with content added outside of a declared grid - adding additional rows/columns when needed. Features such as adding “as many columns that will fit into a container” are included.</p>
+            <li>Alignment control</li><p class="subbullet">The Grid controls allows alignment configuration to control how the items align once placed into a grid area, and how the entire grid is aligned.</p>
             <li>Control of overlapping content</li><p class="subbullet">More than one item can be placed into a grid cell or area, they can partially overlap each other. This layering may then be controlled with z-index property.</p>
           </ul>
-          <p>Grid is a powerful specification and when combined with other parts of CSS such as flexbox, can help you to create layouts that were previously impossible to build in CSS. It all starts by creating a grid in your grid container.</p>
+          <p>As you can se, Grid is a powerful tool. If combined with other parts of CSS such as flexbox it can help you to create layouts that were previously impossible to build in CSS. It all starts by creating a grid in your grid container.</p>
       </section>
       <section class="main-section" id="The_Grid_Container">
         <header><h2>The Grid Container</h2></header>
-        <p>We create a grid container by declaring display: grid or display: inline-grid on an element. As soon as we do this all direct children of that element will become grid items.
+        <p>We create a grid container by declaring <code>display: grid</code> or <code>display: inline-grid</code> on an element. As soon as we do this all direct children of that element will become grid items.
 
             In this example, I have a containing div with a class of wrapper, inside are five child elements.
         </p>
@@ -53,17 +53,17 @@
 
         <p>The above code would give a grid that is 1 column wide with 5 rows</p>
 
-        <p>All the direct children are now grid items. In a web browser, you won’t see any difference to how these items are displayed before turning them into a grid, as grid has created a single column grid for the items.
+        <p>All direct children are now grid items. If viewed nn a web browser, the avbove code would look the same with or wihtout the Grid container - the grid has created a single column grid for the items.
 
         As you learn and then work with the CSS Grid Layout this tool will give you a better idea of what is happening with your grids visually.
-        If we want to start making this more grid-like we need to add column tracks</p>
+        If we want to start making this more grid-like we need to add more columns.</p>
 
       </section>
       <section class="main-section" id="Grid_Tracks">
         <header><h2>Grid Tracks</h2></header>
-        <p>We define rows and columns on our grid with the grid-template-columns and grid-template-rows properties. These define grid tracks. A grid track is the space between any two lines on the grid. In the below image you can see a track highlighted – this is the first row track in our grid.</p>
+        <p>In order to develop our Grid container, we need to define rows and columns using the <code>grid-template-columns</code> and <code>grid-template-rows</code> properties. These define grid "tracks" - space between any two lines on the grid (cf railway tracks). In the below image you can see a track highlighted – this is the first row track in our grid.</p>
           <img src="1_Grid_Track.png">
-        <p>I can add to our earlier example by adding the grid-template-columns property, then defining the size of the column tracks.</p>
+        <p>We can add to our earlier example by adding the <code>grid-template-columns</code> property, then defining the size of the column tracks.</p>
 
       <div id="codeblock">
         <code>&ltdiv class="wrapper"&gt<br />
@@ -81,21 +81,19 @@
           grid-template-columns: 200px 200px 200px;<br />
         }</code>
 </div>
-        <p>I have now created a grid with three 200-pixel-wide column tracks. The child items will be laid out on this grid one in each grid cell.</p>
+        <p>This will createe a grid with three 200-pixel-wide column tracks. The child items will be laid out on this grid one in each grid cell.</p>
 
         <p>Further details can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Grid_Tracks" target ="_blank">Mozilla Developer</a> page for te grid funcitonality</p>
       </section>
       <section class="main-section" id="Grid_Lines">
         <header><h2>Grid Lines</h2></header>
-        <p>It should be noted that when we define a grid we define the grid tracks, not the lines. Grid then gives us numbered lines to use when positioning items. In our three column, two row grid we have four column lines.</p>
+        <p>You should be note that when we define a grid we define the grid tracks, not the lines. We then poisiton items using the numbered lines provided by Grid. In our three column, two row grid we have four column lines.</p>
 
         <img src="1_diagram_numbered_grid_lines.png" alt="Diagram showing numbered grid lines">
 
-        <p>Lines are numbered according to the writing mode of the document. In a left-to-right language, line 1 is on the left-hand side of the grid. In a right-to-left language, it is on the right-hand side of the grid. Lines can also be named, and we will look at how to do this in a later guide in this series.</p>
-
-        <p>We will be exploring line based placement in full detail in a later article. The following example demonstrates doing this in a simple way. When placing an item, we target the line – rather than the track.
-
-In the following example I am placing the first two items on our three column track grid, using the grid-column-start, grid-column-end, grid-row-start and grid-row-end properties. Working from left to right, the first item is placed against column line 1, and spans to column line 4, which in our case is the far-right line on the grid. It begins at row line 1 and ends at row line 3, therefore spanning two row tracks.
+        <p>NOTE: Lines are numbered according to the writing mode of the document (in a left-to-right language, line 1 is on the left-hand side of the grid. In a right-to-left language, it is on the right-hand side of the grid). You can also name lines but this is not covered in this documentation.</p>
+ZZZZ
+<p>In the following example we place the first two items on our three column track grid, using the grid-column-start, grid-column-end, grid-row-start and grid-row-end properties. Working from left to right, the first item is placed against column line 1, and spans to column line 4, which in our case is the far-right line on the grid. It begins at row line 1 and ends at row line 3, therefore spanning two row tracks.
 
 The second item starts on grid column line 1, and spans one track. This is the default so I do not need to specify the end line. It also spans two row tracks from row line 3 to row line 5. The other items will place themselves into empty spaces on the grid.</p>
 <div id="codeblock">
